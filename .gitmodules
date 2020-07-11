@@ -1,3 +1,6 @@
 [submodule "SDL2_sh_installer"]
 	path = SDL2_sh_installer
 	url = https://github.com/BeneathTS/SDL2_sh_installer
+[submodule "libft"]
+	path = libft
+	url = https://github.com/BeneathTS/libft

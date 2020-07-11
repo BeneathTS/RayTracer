@@ -9,6 +9,8 @@ CFLAGS = -Wall -Wextra -Werror
 SDL_LIB_FLAGS = -lSDL2 -lSDL2_image
 
 # Sources
+SCENE_READER =			reader.c				\
+
 EVENTS =				handle_events.c			\
 
 PROGRAM_EXIT =			handle_exit.c			\
@@ -36,37 +38,44 @@ SRC =					main.c					\
 						$(PROGRAM_EXIT)			\
 						$(DATA_INITIALIZATION)	\
 						$(VECTORS)				\
+						$(SCENE_READER)			\
 
 # Object files
 OBJ = $(SRC:.c=.o)
 
 # Header files paths
+LFT_HEADERS_PATH = -I libft/includes/
 PRJ_HEADERS_PATH = -I include/
 SDL2_HEADERS_PATH = -I /usr/local/include/SDL2
 
-INCLUDE = $(PRJ_HEADERS_PATH) $(SDL2_HEADERS_PATH)
+INCLUDE = $(PRJ_HEADERS_PATH) $(SDL2_HEADERS_PATH) $(LFT_HEADERS_PATH)
 
 # Source folders
 SRC_PATH = source/
+LFT_PATH = libft/
 
 vpath %.c $(SRC_PATH)
 vpath %.c $(SRC_PATH)data_init
 vpath %.c $(SRC_PATH)vectors
 vpath %.c $(SRC_PATH)program_exit
 vpath %.c $(SRC_PATH)events
+vpath %.c $(SRC_PATH)scene_reader
 
-.PHONY: all sdl_install clean fclean re
+.PHONY: all sdl_install lib clean fclean re
 
 # Build program
-all: $(PROG_NAME)
+all: lib $(PROG_NAME)
 
 # Linking
 $(PROG_NAME): $(OBJ)
-	@$(COMPILER) $(CFLAGS) $(INCLUDE) $^ $(SDL_LIB_FLAGS) -o $(PROG_NAME)
+	@$(COMPILER) $(CFLAGS) $(INCLUDE) $^ $(SDL_LIB_FLAGS) -L $(LFT_PATH) -lft -o $(PROG_NAME)
 
 # Compile
 $(OBJ): $(SRC)
 	@$(COMPILER) $(CFLAGS) $(INCLUDE) $^ -c
+
+lib:
+	@make -C libft
 
 # Remove Obj files
 clean:

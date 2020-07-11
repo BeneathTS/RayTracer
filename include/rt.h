@@ -10,6 +10,7 @@
 #include "scene.h"
 #include "prog_exit.h"
 #include "vectors.h" // Vectors lib header
+#include "libft.h"
 
 // Environment
 t_env	*init_env();

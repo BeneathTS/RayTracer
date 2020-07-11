@@ -19,18 +19,14 @@ static char *get_err_msg(uint16_t status_id)
 
 static void display_error_message(const char *err_msg)
 {
-	int size;
-
-	size = 0;
-	while (err_msg[size])
-		++size;
-	
-	write(1, err_msg, size);
+	ft_putstr(err_msg);
 }
 
 void program_exit(uint16_t status_id, t_env *env, t_scene *scene)
 {
-	free_allocated_memory(status_id, env, scene);
+	(void)env;
+	(void)scene;
+	//free_allocated_memory(status_id, env, scene);
 
 	if (status_id ^ success_exit)
 		display_error_message(get_err_msg(status_id));
