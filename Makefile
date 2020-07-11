@@ -9,7 +9,7 @@ CFLAGS = -Wall -Wextra -Werror
 SDL_LIB_FLAGS = -lSDL2 -lSDL2_image
 
 # Sources
-SCENE_READER =			reader.c				\
+SCENE_READER =			scene_reader.c			\
 						check_input_data.c		\
 
 EVENTS =				handle_events.c			\

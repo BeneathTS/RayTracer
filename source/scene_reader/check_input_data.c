@@ -1,6 +1,6 @@
 #include "rt.h"
 
-static bool check_scene_file(const char *scene)
+static bool check_file(const char *scene)
 {
 	int fd;
 
@@ -43,8 +43,11 @@ static bool check_args(int argc, char **argv)
 		if (arg_class == error_arg)
 			return (error);
 		
+		else if (arg_class == flag_arg)
+			return (error); // Change if we add flags
+
 		else if (arg_class == file_arg)
-			if(check_scene_file(argv[ct]) == error || scene++)
+			if(check_file(argv[ct]) == error || scene++)
 				return (error);
 	}
 	return (success);

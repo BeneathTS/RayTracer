@@ -12,7 +12,7 @@ t_env *init_env()
 
 	// Set default values
 	env->sdl = NULL;
-	env->features = 0x0;
+	//env->features = 0x0;
 
 	return (env);
 }
