@@ -5,19 +5,18 @@
 
 # include "vectors.h"
 
+#define SCENE_FILE_EXT ".scene"
+
 enum	e_object_id
 {
-	sphere = 				1,
-	cone = 					2,
-	plane = 				3,
-	cylinder = 				4
-};
-
-enum	e_light_id
-{
-	ambient = 				1,
-	point = 				2,
-	directional = 			3
+	cam,
+	sphere,
+	cone,
+	plane,
+	cylinder,
+	point_light,
+	directional_light,
+	ambient
 };
 
 typedef struct				s_object

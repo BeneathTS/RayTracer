@@ -8,6 +8,7 @@
 #include "environment.h"
 #include "events.h"
 #include "scene.h"
+#include "reader.h"
 #include "prog_exit.h"
 #include "vectors.h" // Vectors lib header
 #include "libft.h"
@@ -21,7 +22,9 @@ bool	create_window(t_env *env);
 void launch_program(t_env *env, t_scene *scene);
 
 // Scene
-t_scene						*init_scene(int argc, char **argv);
+bool check_input_data(int argc, char **argv);
+	//bool						read_scene(int argc, char **argv, t_scene *scene);
+	t_scene *init_scene();
 t_object					*init_obj();
 
 // Errors

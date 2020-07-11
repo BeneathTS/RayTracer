@@ -2,16 +2,16 @@
 
 static char *get_err_msg(uint16_t status_id)
 {
-	if (status_id & sdl_init_err)
+	if (status_id == sdl_init_err)
 		return (SDL_INIT_ERR_MSG);
 
-	else if (status_id & data_init_err)
+	else if (status_id == data_init_err)
 		return (DATA_INIT_ERR_MSG);
 
-	else if (status_id & read_map_err)
+	else if (status_id == read_map_err)
 		return (READ_MAP_ERR_MSG);
 
-	else if (status_id & open_map_err)
+	else if (status_id == open_map_err)
 		return (OPEN_MAP_ERR_MSG);
 
 	return("Unknown Error!\n");
@@ -28,7 +28,7 @@ void program_exit(uint16_t status_id, t_env *env, t_scene *scene)
 	(void)scene;
 	//free_allocated_memory(status_id, env, scene);
 
-	if (status_id ^ success_exit)
+	if (status_id != success_exit)
 		display_error_message(get_err_msg(status_id));
 	
 	exit(0);

@@ -14,12 +14,13 @@ enum e_function_exit_status
 
 enum e_status_id
 {
-	success_exit =	(1 << 0),
-	sdl_init_err =	(1 << 1),
-	window_mk_err = (1 << 2),
-	data_init_err =	(1 << 3),
-	read_map_err =	(1 << 4),
-	open_map_err =	(1 << 5)
+	success_exit,
+	sdl_init_err,
+	window_mk_err,
+	data_init_err,
+	read_map_err,
+	open_map_err,
+	args_err
 };
 
 #endif

@@ -15,10 +15,8 @@ t_object *init_obj()
 }
 
 
-t_scene *init_scene(int argc, char **argv)
+t_scene *init_scene()
 {
-	(void)argc;
-	(void)argv;
 	t_scene *scene;
 
 	scene = (t_scene*)malloc(sizeof(t_scene));
