@@ -81,10 +81,12 @@ lib:
 # Remove Obj files
 clean:
 	@rm -f $(OBJ)
+	@make -C libft clean
 
 # Remove all created files
 fclean: clean
 	@rm -f $(PROG_NAME)
+	@make -C libft fclean
 
 # Rebuild program
 re: fclean all

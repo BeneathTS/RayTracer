@@ -3,8 +3,9 @@
 
 #define SDL_INIT_ERR_MSG "q\n"
 #define DATA_INIT_ERR_MSG "qw\n"
-#define READ_MAP_ERR_MSG "qwe\n"
-#define OPEN_MAP_ERR_MSG "qwer\n"
+#define READ_SCENE_ERR_MSG "qwe\n"
+#define OPEN_SCENE_ERR_MSG "qwer\n"
+#define INVALID_INPUT_ERR_MSG "qwert\n"
 
 enum e_function_exit_status
 {
@@ -18,8 +19,9 @@ enum e_status_id
 	sdl_init_err,
 	window_mk_err,
 	data_init_err,
-	read_map_err,
-	open_map_err,
+	read_scene_err,
+	open_scene_err,
+	invalid_inpunt_err,
 	args_err
 };
 

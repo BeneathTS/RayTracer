@@ -23,11 +23,13 @@ void launch_program(t_env *env, t_scene *scene);
 
 // Scene
 bool check_input_data(int argc, char **argv);
-	//bool						read_scene(int argc, char **argv, t_scene *scene);
-	t_scene *init_scene();
-t_object					*init_obj();
+uint8_t read_scene(const char *scene_name, t_scene *scene);
+t_scene		*init_scene();
+t_object	*init_obj();
 
 // Errors
 void program_exit(uint16_t status_id, t_env *env, t_scene *scene);
 void free_allocated_memory(uint16_t status_id, t_env *env, t_scene *scene);
+
+
 #endif

@@ -28,7 +28,7 @@ static uint8_t identify_arg_class(const char *arg)
 	return (error_arg);
 }
 
-static bool check_args(int argc, char **argv)
+static uint8_t check_args(int argc, char **argv)
 {
 	int ct;
 	int scene;
@@ -41,14 +41,14 @@ static bool check_args(int argc, char **argv)
 		arg_class = identify_arg_class(argv[ct]);
 
 		if (arg_class == error_arg)
-			return (error);
+			return (args_err);
 		
 		else if (arg_class == flag_arg)
 			return (error); // Change if we add flags
 
 		else if (arg_class == file_arg)
 			if(check_file(argv[ct]) == error || scene++)
-				return (error);
+				return (invalid_inpunt_err);
 	}
 	return (success);
 }

@@ -1,0 +1,29 @@
+Camera:
+{
+	Position: 0, 0, 0;
+	Direction: 0, 0, 0;
+	FOV: 60;
+}
+
+Light:
+{
+	Type: Point;
+	Position: 0, 0, 0;
+	Intensity: 0.5;
+}
+
+Sphere:
+{
+	Position: 0, 0, 0;
+	Direction: 0, 0, 0;
+	Radius: 1;
+	Color: 0xff00ff;
+}
+
+Sphere:
+{
+	Position: 0, 0, 0;
+	Direction: 0, 0, 0;
+	Radius: 1;
+	Color: 0xffff00;
+}

@@ -8,11 +8,11 @@ static char *get_err_msg(uint16_t status_id)
 	else if (status_id == data_init_err)
 		return (DATA_INIT_ERR_MSG);
 
-	else if (status_id == read_map_err)
-		return (READ_MAP_ERR_MSG);
+	else if (status_id == read_scene_err)
+		return (READ_SCENE_ERR_MSG);
 
-	else if (status_id == open_map_err)
-		return (OPEN_MAP_ERR_MSG);
+	else if (status_id == open_scene_err)
+		return (OPEN_SCENE_ERR_MSG);
 
 	return("Unknown Error!\n");
 }

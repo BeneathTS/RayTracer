@@ -1,3 +1,5 @@
 *.o
 RT
 SDL/
+*.a
+.DS_Store

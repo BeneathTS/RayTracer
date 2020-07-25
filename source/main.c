@@ -4,6 +4,7 @@ int main(int argc, char **argv)
 {
 	t_env *env;
 	t_scene *scene;
+	uint8_t	rd_stat;
 
 	// That need only for segfault protection
 	env = NULL;
@@ -19,7 +20,12 @@ int main(int argc, char **argv)
 	if (!(scene = init_scene()))
 		program_exit(data_init_err, env, scene);
 
+	// Read scene file
+	if ((rd_stat = read_scene(argv[1], scene)) != success)
+		program_exit(rd_stat, env, scene);
+
 	// Start the renderer
 	launch_program(env, scene);
+
 	return (0);
 }
