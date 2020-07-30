@@ -9,14 +9,12 @@
 
 enum	e_object_id
 {
-	cam,
+	cam = 1,
 	sphere,
 	cone,
 	plane,
 	cylinder,
-	point_light,
-	directional_light,
-	ambient
+	light
 };
 
 typedef struct				s_object
@@ -24,7 +22,14 @@ typedef struct				s_object
 	uint8_t					id;
 	t_vec3f					pos;
 	t_vec3f					dir;
-	struct s_object		*next;
+	uint32_t				color;
+	uint8_t					specular;
+ 	float					reflective;
+
+	float					radius; // only sphere, cyllinder, cone
+
+	struct s_object			*next;
+	struct s_object			*prev;
 }							t_object;
 
 typedef struct				s_scene

@@ -4,27 +4,23 @@ int main(int argc, char **argv)
 {
 	t_env *env;
 	t_scene *scene;
-	uint8_t	rd_stat;
+	//uint8_t	rd_stat;
 
-	// That need only for segfault protection
 	env = NULL;
 	scene = NULL;
 
 	if (check_input_data(argc, argv) == error)
 		program_exit(args_err, env, scene);
 
-	// Init program data
 	if (!(env = init_env()))
 		program_exit(data_init_err, env, scene);
 
 	if (!(scene = init_scene()))
 		program_exit(data_init_err, env, scene);
 
-	// Read scene file
-	if ((rd_stat = read_scene(argv[1], scene)) != success)
-		program_exit(rd_stat, env, scene);
+	//if ((rd_stat = read_scene(argv[1], scene)) != success)
+	//	program_exit(rd_stat, env, scene);
 
-	// Start the renderer
 	launch_program(env, scene);
 
 	return (0);

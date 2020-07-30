@@ -24,6 +24,7 @@ void launch_program(t_env *env, t_scene *scene);
 // Scene
 bool check_input_data(int argc, char **argv);
 uint8_t read_scene(const char *scene_name, t_scene *scene);
+uint8_t get_obj_type(int scene_fd);
 t_scene		*init_scene();
 t_object	*init_obj();
 

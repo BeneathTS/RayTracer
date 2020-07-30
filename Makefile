@@ -11,6 +11,7 @@ SDL_LIB_FLAGS = -lSDL2 -lSDL2_image
 # Sources
 SCENE_READER =			scene_reader.c			\
 						check_input_data.c		\
+						get_obj_type.c			\
 
 EVENTS =				handle_events.c			\
 

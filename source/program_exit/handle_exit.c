@@ -19,7 +19,9 @@ static char *get_err_msg(uint16_t status_id)
 
 static void display_error_message(const char *err_msg)
 {
+	ft_putstr("\033[31m");
 	ft_putstr(err_msg);
+	ft_putstr("\033[0m");
 }
 
 void program_exit(uint16_t status_id, t_env *env, t_scene *scene)

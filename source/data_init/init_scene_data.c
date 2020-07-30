@@ -3,6 +3,7 @@
 t_object *init_obj()
 {
 	t_object *object;
+	//t_object *node_head;
 
 	object = (t_object*)malloc(sizeof(t_object));
 

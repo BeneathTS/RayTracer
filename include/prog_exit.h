@@ -3,8 +3,8 @@
 
 #define SDL_INIT_ERR_MSG "q\n"
 #define DATA_INIT_ERR_MSG "qw\n"
-#define READ_SCENE_ERR_MSG "qwe\n"
-#define OPEN_SCENE_ERR_MSG "qwer\n"
+#define READ_SCENE_ERR_MSG "Something went wrong while reading the file!\n"
+#define OPEN_SCENE_ERR_MSG "Something went wrong while opening the file!\n"
 #define INVALID_INPUT_ERR_MSG "qwert\n"
 
 enum e_function_exit_status
